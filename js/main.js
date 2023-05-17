@@ -69,3 +69,62 @@ if ((destino == 1) && (salida == 1) && (residente == 1)){
     mostrarResumen("Ushuaia", "12/06/2023", cantidadAdt, cantidadHab, costo );
 
 }
+
+let fop = parseInt(prompt("Ingresa el medio de pago que deseas utilizar" +"\n"+ "1- Tarjeta de crédito (1 pago)" + "\n"+ "2- Transferencia/deposito bancario"+ "\n"+ "3- Verificar financiacion en cuotas"));
+
+while ((fop != 1) && (fop != 2) && (fop != 3)){
+  alert("La opción de salida no es válida")
+  fop = parseInt(prompt("Por favor ingresa alguna de las siguientes opciones disponibles"+"\n"+ "1- Tarjeta de crédito (1 pago)" + "\n"+ "2- Transferencia/deposito bancario"+ "\n"+ "3- Verificar financiacion en cuotas"));
+}
+
+let importe;
+const cuentaCorriente = ("Banco Supervielle" + "\n"+
+                        "Cuenta Corriente: 125568846/12" + "\n");
+
+if (fop == 1){
+
+  let tc = parseInt(prompt("Ingresa el tipo de tarjeta a utilizar" +"\n"+ "1- Visa" + "\n"+ "2- Master"+ "\n"+ "3- American Express"))
+
+} else if (fop == 2){
+  alert("Los datos de nuestra cuenta son: " +"\n" +cuentaCorriente)
+
+} else if (fop == 3) {
+
+    importe = parseInt(prompt("Ingresa el importe que deseas financiar"));
+    
+  while (importe != "0") {
+
+    let cuotas = Number(prompt("Podes optar por el Plan Ahora 6, 12 y 18 ¿En cuantas cuotas deseas financiar?"));
+    function plan6() {
+       let importeConInt = importe * 1.24
+       let valorCuota = importeConInt / 6 
+      alert("El importe con el interés en el Plan Ahora 6 es: $" + importeConInt + "\n" + "Quedaria un costo por cuota de: $" + valorCuota);
+    }
+    function plan12() {
+        let importeConInt = importe * 1.33
+        let valorCuota = importeConInt / 12 
+       alert("El importe con el interés en el Plan Ahora 12 es: $" + importeConInt + "\n" + "Quedaria un costo por cuota de: $" + valorCuota);
+    }
+    function plan18() {
+        let importeConInt = importe * 1.39
+        let valorCuota = importeConInt / 18 
+       alert("El importe con el interés en el Plan Ahora 12 es: $" + importeConInt + "\n" + "Quedaria un costo por cuota de: $" + valorCuota);
+    }
+
+    if (cuotas == 6) {
+      plan6();
+    } else if (cuotas == 12) {
+      plan12();
+    } else if (cuotas == 18) {
+      plan18();
+    } else {
+      alert("La opción ingresada no es válida para el Plan Ahora");
+    }
+
+    alert("Ingresa un monto superior a $0 para volver calcular");
+    importe = prompt("Introduce el importe o marca 0 para salir de la calculadora");
+  }
+  
+} 
+
+alert("Gracias por usar nuestro cotizador");
