@@ -91,47 +91,44 @@ function mostrarPaquetes() {
           <p>Paquete de ${paquete.duracion}.<br>
           Incluye ${paquete.transporte} y alojamiento en ${paquete.hotel}
         `;
-        const btnInfo = document.createElement("button");
-        btnInfo.classList.add("btn-info");
-        btnInfo.textContent = "Saber costo";
-        btnInfo.onclick = ()=>{
-            mostrarPrecio (paquete.precio);
-        };
+    const btnInfo = document.createElement("button");
+    btnInfo.classList.add("btn-info");
+    btnInfo.textContent = "Saber costo";
+    btnInfo.onclick = () => {
+      mostrarPrecio(paquete.precio);
+    };
 
     document.getElementById("paquetes").appendChild(div);
     document.getElementById("paquetes").appendChild(btnInfo);
-    };
-};
+  }
+}
 
-let resultado = document.getElementById("resultado")
+let resultado = document.getElementById("resultado");
 
-function mostrarPrecio (precio){
+function mostrarPrecio(precio) {
+  resultado.innerHTML = "";
+  const paqueteElegido = document.createElement("p");
+  paqueteElegido.classList.add("detalle");
 
-    resultado.innerHTML = "";
-    const paqueteElegido = document.createElement("p");
-    paqueteElegido.classList.add("detalle")
+  paqueteElegido.textContent =
+    "El precio por persona en base doble es: $" + precio;
+  paqueteElegido.classList.add("detalle");
+  elegidos.push(paqueteElegido);
 
-    paqueteElegido.textContent = ("El precio por persona en base doble es: $" + precio);
-    paqueteElegido.classList.add("detalle")
-    elegidos.push(paqueteElegido);
+  const btnInfoPlus = document.createElement("button");
+  btnInfoPlus.classList.add("btn-info");
+  btnInfoPlus.textContent = "Avanzar con la solicitud";
+  btnInfoPlus.onclick = () => {
+    solicitarDatos();
+  };
 
-    const btnInfoPlus = document.createElement("button");
-    btnInfoPlus.classList.add("btn-info");
-    btnInfoPlus.textContent = "Avanzar con la solicitud";
-    btnInfoPlus.onclick = () => {
-        solicitarDatos();
-    };
-  
-    
-    resultado.appendChild(paqueteElegido);
-    resultado.appendChild(btnInfoPlus);
-    
-};
+  resultado.appendChild(paqueteElegido);
+  resultado.appendChild(btnInfoPlus);
+}
 
-function solicitarDatos(){
-    let datos = document.createElement("div");
-    datos.innerHTML = 
-    `<form class="form" method="GET">
+function solicitarDatos() {
+  let datos = document.createElement("div");
+  datos.innerHTML = `<form class="form" method="GET">
     <label for="nombre">Nombre</label>
     <input type="text" id="nombre" />
     <label for="apellido">Apellido</label>
@@ -155,12 +152,10 @@ function solicitarDatos(){
     <input type="submit" value="Enviar formulario" />
   </form>
         `;
-    let nombre= document.getElementById("nombre")
-        
-    resultado.appendChild(datos);
+  let nombre = document.getElementById("nombre");
+
+  resultado.appendChild(datos);
 }
-
-
 
 const guardarLocal = (clave, valor) => {
   localStorage.setItem(clave, valor);
@@ -179,5 +174,3 @@ console.log(almacenados);
 document.addEventListener("DOMContentLoaded", () => {
   mostrarPaquetes();
 });
-
-
