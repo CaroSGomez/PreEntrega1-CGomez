@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@300;500&family=Yanone+Kaffeesatz:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap");
+
+body{
+    background-color: ivory;
+    padding: 1rem;
+}
+
+header {
+    padding: 1.5rem;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav {
+      width: 100%;
+      height: 100%;      
+}
+
+nav img {
+        width: 10rem;
+        height: 10rem;
+}
+
+nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+}
+
+nav ul li {
+          text-align: center;
+          list-style: none;
+          font-size: 2.2rem;
+          font-family: "Yanone Kaffeesatz", sans-serif;
+          font-weight: bold;
+}
+
+nav ul li a {
+            padding: 1rem;
+            color: white;
+            text-decoration: none;
+            width: 5rem;
+}
+
+nav ul li a:hover {
+            background-color: rgb(69, 119, 121);
+            border-radius: 150px;
+            color: white;
+            padding: 2rem;
+}
+.conteiner{
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.detalle{
+    font-size: 2rem;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: aqua;
+    padding: 1rem;
+    color: antiquewhite;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
